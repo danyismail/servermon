@@ -9,14 +9,14 @@ import Log from './Log.js'
 import Config from './Config.js'
 import DataServer from './DataServer'
 import UserEdit from './UserEdit'
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom"
+import { connect } from 'react-redux'
 
-export default class defaultLayout extends React.Component {
+class defaultLayout extends React.Component {
     constructor(props) {
         super(props);
         const user = () => {
             axios.defaults.withCredentials = true;
-
             axios.get("http://dev.beacukai.go.id:9012/user")
                 .then(response => {
                     this.state = { user: response.data.data.user_data.name };
@@ -36,9 +36,10 @@ export default class defaultLayout extends React.Component {
     }
 
     render() {
+        this.props.setUserData()
         return (
             <div>
-                <Header user={"Super Admin"} />
+                <Header />
                 <div className="app-main">
                     <div className="app-main__inner">
                         <div className="app-main__inner">
@@ -59,3 +60,28 @@ export default class defaultLayout extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        user_id: state.user_id,
+        user_name: state.user_name,
+        level: state.level,
+        name: state.name
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setUserData: async () => {
+            const { data } = await axios.get("http://dev.beacukai.go.id:9012/user", { withCredentials: true })
+            dispatch({
+                type: 'SET_USER_DATA',
+                payload: data.data.user_data
+            })
+        }
+    }
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(defaultLayout)
