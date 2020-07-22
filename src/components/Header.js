@@ -2,8 +2,9 @@ import React from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import Login from './Login';
+import { connect } from 'react-redux';
 
-export default class Header extends React.Component {
+class Header extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -131,8 +132,7 @@ export default class Header extends React.Component {
                                     </div>
                                     <div className="widget-content-left  ml-3 header-user-info">
                                         <div className="widget-heading">
-                                            {this.props.user}
-                                            {/* SUPERADMIN */}
+                                            {this.props.user_name}
                                         </div>
                                         <div className="widget-subheading">
                                             Mitra Infosarana
@@ -148,3 +148,11 @@ export default class Header extends React.Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        user_name: state.user_name,
+    }
+}
+
+export default connect(mapStateToProps)(Header)
