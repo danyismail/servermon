@@ -4,9 +4,9 @@ import { api, formatDate, formatTime } from './Constants';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import { Pagination } from 'antd';
-import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
-
-export default class Server extends React.Component {
+import { connect } from 'react-redux';
+// import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
+class Server extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,7 +23,7 @@ export default class Server extends React.Component {
     onChange = (pageNumber, pageSize) => {
         // console.log(pageNumber);
         axios.get(api() + '/server', {
-            params: { 
+            params: {
                 serverGroup: this.state.serverGroup,
                 page: pageNumber,
                 limit: pageSize
@@ -45,7 +45,7 @@ export default class Server extends React.Component {
         this.setState({ isLoading: true });
         axios.defaults.withCredentials = true;
         axios.get(api() + '/server', {
-            params: { 
+            params: {
                 serverGroup: this.state.serverGroup,
                 page: this.state.currentPage,
                 limit: this.state.limit
@@ -68,30 +68,30 @@ export default class Server extends React.Component {
     }
 
     renderModalClose() {
-        this.setState({ showModal:false })
+        this.setState({ showModal: false })
         return (
             <>
-            <div className="modal fade" id="" tabIndex={-1} role="dialog" aria-labelledby={`#exampleModalLabel`} aria-modal="true">
-                <div className="modal-dialog" role="document">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id={`exampleModalLabel`}>Delete </h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            <p className="mb-0">Yakin Ingin Menghapusnya.</p>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="button" className="btn btn-primary">Yes</button>
+                <div className="modal fade" id="" tabIndex={-1} role="dialog" aria-labelledby={`#exampleModalLabel`} aria-modal="true">
+                    <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id={`exampleModalLabel`}>Delete </h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                <p className="mb-0">Yakin Ingin Menghapusnya.</p>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="button" className="btn btn-primary">Yes</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="jvectormap-tip"></div>
-            
+                <div className="jvectormap-tip"></div>
+
             </>
         )
     }
@@ -102,7 +102,7 @@ export default class Server extends React.Component {
         console.log(server_id);
         return (
             <>
-            {/* <Modal isOpen={true} toggle={true} fade={true}>
+                {/* <Modal isOpen={true} toggle={true} fade={true}>
                 <ModalHeader toggle={true}>Modal title</ModalHeader>
                 <ModalBody>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -112,36 +112,37 @@ export default class Server extends React.Component {
                 <Button color="secondary" onClick={() => this.setState({showModal:false})}>Cancel</Button>
                 </ModalFooter>
             </Modal> */}
-            <div className="modal fade show" id={server_id} tabIndex={-1} role="dialog"
-            aria-labelledby={`#exampleModalLabel${server_id}`}
-            aria-modal="true" style={{display: 'block', paddingRight: 16}}>
-                <div className="modal-dialog" role="document">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id={`exampleModalLabel${server_id}`}>Delete </h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => this.renderModalClose()}>
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            <p className="mb-0">Yakin Ingin Menghapusnya.</p>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" onClick={() => this.renderModalClose()} className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="button" className="btn btn-primary">Yes</button>
+                <div className="modal fade show" id={server_id} tabIndex={-1} role="dialog"
+                    aria-labelledby={`#exampleModalLabel${server_id}`}
+                    aria-modal="true" style={{ display: 'block', paddingRight: 16 }}>
+                    <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title" id={`exampleModalLabel${server_id}`}>Delete </h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={() => this.renderModalClose()}>
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                <p className="mb-0">Yakin Ingin Menghapusnya.</p>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" onClick={() => this.renderModalClose()} className="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="button" className="btn btn-primary">Yes</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="jvectormap-tip"></div>
-            <div className="modal-backdrop fade show"></div>
-            
+                <div className="jvectormap-tip"></div>
+                <div className="modal-backdrop fade show"></div>
+
             </>
         )
 
     }
-    
+
     render() {
+        console.log(this.props)
         const { isLoading } = this.state;
         if (isLoading) {
             return (
@@ -208,15 +209,18 @@ export default class Server extends React.Component {
                                                 <button
                                                     className="mr-2 btn-icon btn-icon-only btn btn-outline-primary"><Link to={`/detail_server/${server.server_id}`}
                                                         className="fa fa-chart-bar btn-icon-wrapper"> </Link></button>
-                                                <button
-                                                    className="mr-2 btn-icon btn-icon-only btn btn-outline-primary"><Link to={`/user_edit/${server.server_id}`}
-                                                        className="fa fa-edit btn-icon-wrapper">
-                                                    </Link></button>
-                                                {/* <button type="button" onClick={() => this.renderModal(server.server_id) && this.setState({showModal:true})} */}
-                                                <button type="button" onClick={() => this.setState({showModal:true})}
-                                                    className="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
-                                                    data-toggle="modal" data-target={`#server${server.server_id}`}><i
-                                                        className="fa fa-trash-alt btn-icon-wrapper"> </i></button>
+                                                {this.props.level === 10 ? (
+                                                    <>
+                                                        <button
+                                                            className="mr-2 btn-icon btn-icon-only btn btn-outline-primary"><Link to={`/user_edit/${server.server_id}`}
+                                                                className="fa fa-edit btn-icon-wrapper">
+                                                            </Link></button>
+                                                        {/* <button type="button" onClick={() => this.renderModal(server.server_id) && this.setState({showModal:true})} */}
+                                                        <button type="button" onClick={() => this.setState({ showModal: true })}
+                                                            className="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
+                                                            data-toggle="modal" data-target={`#server${server.server_id}`}><i
+                                                                className="fa fa-trash-alt btn-icon-wrapper"> </i></button>
+                                                    </>) : (<></>)}
                                                 {this.state.showModal && this.renderModal(server.server_id)}
                                             </td>
                                         </tr>
@@ -229,7 +233,7 @@ export default class Server extends React.Component {
                             <button type="button" className="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
                                 data-toggle="modal" data-target="#exampleModal"><i
                                     className="fa fa-trash-alt btn-icon-wrapper"> </i></button>
-                            <button className="btn-wide btn btn-success">Save</button>
+                            <button className="btn-wide btn btn-success">Save </button>
                         </div>
                     </div>
                 </div>
@@ -237,3 +241,14 @@ export default class Server extends React.Component {
         );
     }
 }
+
+
+
+const mapStateToProps = (state) => {
+    return {
+        level: state.level
+    }
+}
+
+
+export default connect(mapStateToProps)(Server);
