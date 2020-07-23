@@ -27,7 +27,7 @@ export default class DataServer extends React.Component {
     componentDidMount() {
         this.setState({ isLoading: true });
         const { match: { params } } = this.props;
-        // console.log(api() + '/server/' + params.id);
+        console.log(api() + '/server/' + params.id);
         axios.defaults.withCredentials = true;
         axios.get(api() + '/server/' + params.id)
             .then(response => {
