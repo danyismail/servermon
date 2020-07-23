@@ -35,8 +35,13 @@ class defaultLayout extends React.Component {
         }
     }
 
-    render() {
+    componentDidMount() {
         this.props.setUserData()
+        this.props.setServers()
+        console.log(this.props)
+    }
+
+    render() {
         return (
             <div>
                 <Header />
@@ -46,10 +51,10 @@ class defaultLayout extends React.Component {
                             <Switch>
                                 <Route exact path="/" component={Home} />
                                 <Route path="/user" component={User} />
-                                <Route path="/server" component={Server} />
+                                <Route exact path="/server" component={Server} />
                                 <Route path="/log" component={Log} />
                                 <Route path="/config" component={Config} />
-                                <Route path="/detail_server/:id" component={DataServer} />
+                                <Route path="/server/:id" component={DataServer} />
                                 <Route path="/user_edit/:id" component={UserEdit} />
                             </Switch>
                         </div>
@@ -66,7 +71,8 @@ const mapStateToProps = (state) => {
         user_id: state.user_id,
         user_name: state.user_name,
         level: state.level,
-        name: state.name
+        name: state.name,
+        servers: state.servers
     }
 }
 
@@ -78,7 +84,15 @@ const mapDispatchToProps = (dispatch) => {
                 type: 'SET_USER_DATA',
                 payload: data.data.user_data
             })
+        },
+        setServers: async () => {
+            const { data } = await axios.get("http://dev.beacukai.go.id:9012/server", { withCredentials: true })
+            dispatch({
+                type: 'SET_SERVERS',
+                payload: data.data.servers
+            })
         }
+
     }
 }
 

@@ -39,7 +39,7 @@ export default class Login extends React.Component {
                 document.location = "/";
             })
             .catch(error => {
-                console.log(error.response.message)
+                console.log(error.response)
                 if (error.response.status === 400) {
                     alert("Incorrect username or password");
                 }

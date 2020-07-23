@@ -13,7 +13,8 @@ const initialState = {
     user_id: 0,
     user_name: '',
     level: 0,
-    name: ''
+    name: '',
+    servers: []
 }
 
 
@@ -25,6 +26,11 @@ const rootReducer = (state = initialState, action) => {
             user_name: action.payload.user_name,
             level: action.payload.level,
             name: action.payload.name
+        }
+
+        case 'SET_SERVERS': return {
+            ...state,
+            servers: action.payload
         }
         default: return state
     }

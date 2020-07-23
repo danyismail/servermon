@@ -207,7 +207,7 @@ class Server extends React.Component {
                                                     className="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i
                                                         className="fa fa-power-off btn-icon-wrapper"> </i></button> */}
                                                 <button
-                                                    className="mr-2 btn-icon btn-icon-only btn btn-outline-primary"><Link to={`/detail_server/${server.server_id}`}
+                                                    className="mr-2 btn-icon btn-icon-only btn btn-outline-primary"><Link to={`/server/${server.server_id}`}
                                                         className="fa fa-chart-bar btn-icon-wrapper"> </Link></button>
                                                 {this.props.level === 10 ? (
                                                     <>

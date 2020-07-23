@@ -22,15 +22,15 @@ export default class Home extends React.Component {
         }
         setInterval(() => {
             axios(config)
-            .then(response => {
-                this.setState({ jaringan: response.data.data.servers, isLoading: false });
-                console.log(response.data.data.servers);
-            })
-            .catch(error => {
-                console.log(error);
-            });
+                .then(response => {
+                    this.setState({ jaringan: response.data.data.servers, isLoading: false });
+                    console.log(response.data.data.servers);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
         }, 5000)
-        
+
     }
 
     render() {

@@ -19,4 +19,18 @@ export const formatTime = string => {
     return new Date(string).toLocaleTimeString([], options);
 }
 
+export const formatDateHour = string => {
+    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    var newDate = new Date(string)
+    return `${
+        (newDate.getDate() + 1).toString().padStart(2, '0')}/${
+        newDate.getMonth().toString().padStart(2, '0')}/${
+        newDate.getFullYear().toString().padStart(4, '0')} ${
+        newDate.getHours().toString().padStart(2, '0')}:${
+        newDate.getMinutes().toString().padStart(2, '0')}:${
+        newDate.getSeconds().toString().padStart(2, '0')}`
+}
+
+
+
 
