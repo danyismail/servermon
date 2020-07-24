@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { api, formatDate, formatTime } from './Constants'
-import _ from 'lodash'
+// import _ from 'lodash'
 import { Link } from 'react-router-dom'
 import { Pagination } from 'antd'
 import 'antd/dist/antd.css'
@@ -21,27 +21,27 @@ export default class Log extends React.Component {
             limit: 10,
             url: `${api()}/log?type=&page=1&limit=10`
         }
-        
+
     }
 
     url = (type, page, limit) =>
         axios.get(api() + '/log', {
-            params: { 
+            params: {
                 type: type,
                 page: page,
                 limit: limit
             }
-        }) 
-        .then(response => {
-            this.setState({ log: response.data.data.logs, object: response.data.data, isLoading: false });
-            console.log(this.state.object);
         })
-        .catch(error => {
-            console.log(error);
-            alert('Data yang dicari kosong')
-        })
+            .then(response => {
+                this.setState({ log: response.data.data.logs, object: response.data.data, isLoading: false });
+                console.log(this.state.object);
+            })
+            .catch(error => {
+                console.log(error);
+                alert('Data yang dicari kosong')
+            })
 
-    
+
 
     componentDidMount() {
         this.setState({ isLoading: true });
@@ -62,8 +62,8 @@ export default class Log extends React.Component {
         // console.log(this.state.url)
         // this.setState({isLoading: true})
         // const {log} = this.state;
-            // const result = _.filter(log, (o) => _.includes(o, type));
-            // this.setState({log: result, isLoading: false});
+        // const result = _.filter(log, (o) => _.includes(o, type));
+        // this.setState({log: result, isLoading: false});
     }
 
     // handleSort = clickedColumn => () => {
@@ -150,7 +150,7 @@ export default class Log extends React.Component {
                             </div>
                         </div>
                     </div>
-                        <Pagination total={this.state.object.totalItems} onChange={this.onChange} />
+                    <Pagination total={this.state.object.totalItems} onChange={this.onChange} />
                 </div>
             </div>
         );

@@ -8,6 +8,7 @@ import Server from './Server'
 import Log from './Log.js'
 import Config from './Config.js'
 import DataServer from './DataServer'
+import ServerAdd from './ServerAdd'
 import UserEdit from './UserEdit'
 import { Route, Switch } from "react-router-dom"
 import { connect } from 'react-redux'
@@ -19,12 +20,15 @@ class defaultLayout extends React.Component {
             axios.defaults.withCredentials = true;
             axios.get("http://dev.beacukai.go.id:9012/user")
                 .then(response => {
-                    this.state = { user: response.data.data.user_data.name };
-                    // console.log(this.state.user);
+                    this.state = { user: response.data.data.user_data.name }
                 })
                 .catch(error => {
-                    console.log(error);
-                    this.props.history.push('/login')
+                    if (!error.response) {
+                        this.props.history.push('/login')
+                    } else {
+                        console.log(error.response.data.message)
+                        this.props.history.push('/login')
+                    }
                 })
         }
         this.state = {
@@ -52,6 +56,7 @@ class defaultLayout extends React.Component {
                                 <Route exact path="/" component={Home} />
                                 <Route path="/user" component={User} />
                                 <Route exact path="/server" component={Server} />
+                                <Route path="/server/add" component={ServerAdd} />
                                 <Route path="/log" component={Log} />
                                 <Route path="/config" component={Config} />
                                 <Route path="/server/:id" component={DataServer} />
@@ -95,7 +100,6 @@ const mapDispatchToProps = (dispatch) => {
 
     }
 }
-
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(defaultLayout)

@@ -477,672 +477,672 @@ export default class UserEdit extends React.Component {
                                                                 type="text" placeholder="Search" /></div>
                                                     </li>
                                                     <li className="multiselect-item multiselect-all"><a
-                                                        href="javascript:void(0);"
+                                                        href="/"
                                                         className="multiselect-all"><label
                                                             className="checkbox"><input type="checkbox"
                                                                 name="multiselect" value="multiselect-all" />
                                                                                                                             Select all</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="266" />
                                                                                                                             Perbendaharaan_209</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="249" /> BAR KIR
                                                                         MADYA 78_2</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="250" /> BAR KIR
                                                                         MADYA 78_3</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="251" /> BAR KIR
                                                                         MADYA 78_4</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="185" />
                                                                                                                                             BAR_KIR_BATAM_166</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="186" />
                                                                                                                                                 BAR_KIR_BATAM_180</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="246" />
                                                                                                                                                     BAR_KIR_BESAR_2</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="238" />
                                                                                                                                                         BAR_KIR_BESAR_62</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="242" />
                                                                                                                                                             BAR_KIR_BESAR_62_1</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="243" />
                                                                                                                                                                 BAR_KIR_BESAR_62_2</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="244" />
                                                                                                                                                                     BAR_KIR_BESAR_62_3</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="239" />
                                                                                                                                                                         BAR_KIR_BESAR_74</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="245" />
                                                                                                                                                                             BAR_KIR_BESAR_74_1</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="247" />
                                                                                                                                                                                 BAR_KIR_BESAR_74_2</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="241" />
                                                                                                                                                                                     BAR_KIR_MADYA_78</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="211" /> Ekspor Kecil
                                                                         201</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="212" /> Ekspor Kecil
                                                                         202</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="213" /> Ekspor Kecil
                                                                         203</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="214" /> Ekspor Kecil
                                                                         204</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="215" /> Ekspor Kecil
                                                                         207</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="216" /> Ekspor Kecil
                                                                         208</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="217" /> Ekspor Kecil
                                                                         209</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="218" /> Ekspor Kecil
                                                                         210</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="203" /> Ekspor Madya
                                                                         201</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="204" /> Ekspor Madya
                                                                         202</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="205" /> Ekspor Madya
                                                                         203</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="206" /> Ekspor Madya
                                                                         204</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="207" /> Ekspor Madya
                                                                         207</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="208" /> Ekspor Madya
                                                                         208</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="209" /> Ekspor Madya
                                                                         209</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="210" /> Ekspor Madya
                                                                         210</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="219" /> Ekspor Priok
                                                                         201</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="220" /> Ekspor Priok
                                                                         202</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="221" /> Ekspor Priok
                                                                         203</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="222" /> Ekspor Priok
                                                                         204</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="227" /> Ekspor Priok
                                                                         207</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="224" /> Ekspor Priok
                                                                         208</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="225" /> Ekspor Priok
                                                                         209</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="226" /> Ekspor Priok
                                                                         210</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="193" /> EKSPOR
                                                                         PRIOK_202</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="194" /> EKSPOR
                                                                         PRIOK_206</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="191" /> EKSPOR
                                                                         PRIOK_207</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="192" />
                                                                                                                                                                                                                                                                                                     EKSPOR_PRIOK_201</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="275" />
                                                                                                                                                                                                                                                                                                         ESB_EKSTERNAL 29</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="277" />
                                                                                                                                                                                                                                                                                                             ESB_EKSTERNAL_8081</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="278" />
                                                                                                                                                                                                                                                                                                                 ESB_EKSTERNAL_8082 29</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="279" />
                                                                                                                                                                                                                                                                                                                     ESB_EKSTERNAL_8083 30</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="280" />
                                                                                                                                                                                                                                                                                                                         ESB_EKSTERNAL_8084 33</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="281" />
                                                                                                                                                                                                                                                                                                                             ESB_EKSTERNAL_8085 118</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="282" />
                                                                                                                                                                                                                                                                                                                                 ESB_EKSTERNAL_8087</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="283" />
                                                                                                                                                                                                                                                                                                                                     ESB_EKSTERNAL_8092</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="284" />
                                                                                                                                                                                                                                                                                                                                         ESB_EKSTERNAL_9011</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="285" />
                                                                                                                                                                                                                                                                                                                                             ESB_EKSTERNAL_9080</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="286" />
                                                                                                                                                                                                                                                                                                                                                 ESB_EKSTERNAL_9081</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="287" />
                                                                                                                                                                                                                                                                                                                                                     ESB_EKSTERNAL_9082</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="288" />
                                                                                                                                                                                                                                                                                                                                                         ESB_EKSTERNAL_9083</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="289" />
                                                                                                                                                                                                                                                                                                                                                             ESB_EKSTERNAL_9084</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="290" />
                                                                                                                                                                                                                                                                                                                                                                 ESB_EKSTERNAL_9085</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="291" />
                                                                                                                                                                                                                                                                                                                                                                     ESB_EKSTERNAL_9086</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="292" />
                                                                                                                                                                                                                                                                                                                                                                         ESB_EKSTERNAL_9087</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="293" />
                                                                                                                                                                                                                                                                                                                                                                             ESB_EKSTERNAL_9088</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="294" />
                                                                                                                                                                                                                                                                                                                                                                                 ESB_EKSTERNAL_9089</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="276" /> ESB_EKS_03
                                                                         8</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="295" />
                                                                                                                                                                                                                                                                                                                                                                                         ESB_INTERNAL</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="296" />
                                                                                                                                                                                                                                                                                                                                                                                             ESB_INTERNAL_8080</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="297" />
                                                                                                                                                                                                                                                                                                                                                                                                 ESB_INTERNAL_8081</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="298" />
                                                                                                                                                                                                                                                                                                                                                                                                     ESB_INTERNAL_8082</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="299" />
                                                                                                                                                                                                                                                                                                                                                                                                         ESB_INTERNAL_8083</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="300" />
                                                                 ESB_INTERNAL_8084</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="303" />
                                                                     ESB_INTERNAL_8085</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="301" />
                                                                         ESB_INTERNAL_87</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="75" /> IDG
                                                                         10.241.245.49</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="76" /> IDG
                                                                         10.241.245.50</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="78" /> IDG
                                                                         10.241.245.91</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="74" /> IDG
                                                                         10.241.245.92</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="228" /> Impor
                                                                         Madya_201</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="133" /> Impor
                                                                         Madya_202</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="134" /> Impor
                                                                         Madya_203</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="135" /> Impor
                                                                         Madya_204</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="136" /> Impor
                                                                         Madya_207</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="137" /> Impor
                                                                         Madya_208</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="138" /> Impor
                                                                         Madya_209</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="139" /> Impor
                                                                         Madya_210</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="120" />
                                                                                                                             IMPOR_KECIL_201</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="121" />
                                                                                                                                 IMPOR_KECIL_202</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="122" />
                                                                                                                                     IMPOR_KECIL_203</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="123" />
                                                                                                                                         IMPOR_KECIL_204</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="124" />
                                                                                                                                             IMPOR_KECIL_207</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="125" />
                                                                                                                                                 IMPOR_KECIL_208</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="126" />
                                                                                                                                                     IMPOR_KECIL_209</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="127" />
                                                                                                                                                         IMPOR_KECIL_210</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="140" />
                                                                                                                                                             IMPOR_PRIOK_201</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="141" />
                                                                                                                                                                 IMPOR_PRIOK_202</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="197" />
                                                                                                                                                                     IMPOR_PRIOK_203</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="198" />
                                                                                                                                                                         IMPOR_PRIOK_204</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="199" />
                                                                                                                                                                             IMPOR_PRIOK_207</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="200" />
                                                                                                                                                                                 IMPOR_PRIOK_208</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="201" />
                                                                                                                                                                                     IMPOR_PRIOK_209</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="202" />
                                                                                                                                                                                         IMPOR_PRIOK_210</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="86" /> PDE
                                                                         ENABLE</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="255" /> PDE
                                                                         JOB</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="256" /> PDE
                                                                         JOBPARSING 12</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="257" /> PDE
                                                                         JOBPARSING 13</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="258" /> PDE
                                                                         JOBPARSING MADYA_16</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="259" /> PDE
                                                                         JOBPARSING PRIOK_17</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="260" /> PDE
                                                                         JOBRESPON_12</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="261" /> PDE
                                                                         RESPONGW</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="262" /> PDE
                                                                         SERVICE</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="302" />
                                                                                                                                                                                                                                 PDE_WSLOADER_16</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="263" />
                                                                                                                                                                                                                                     Perbendaharaan 201</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="264" />
                                                                                                                                                                                                                                         Perbendaharaan_203</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="265" />
                                                                                                                                                                                                                                             Perbendaharaan_207</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="267" /> Perijinan
                                                                         Online_151</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="305" />
                                                                                                                                                                                                                                                     Perijinan_TPB 125</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="304" />
                                                                                                                                                                                                                                                         P_Online_Publik_105</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="179" />
                                                                                                                                                                                                                                                             SAC3_112_80</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="180" />
                                                                                                                                                                                                                                                                 SAC3_112_81</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="181" />
                                                                                                                                                                                                                                                                     SAC3_112_82</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="171" />
                                                                                                                                                                                                                                                                         SAC3_150_80</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="173" />
                                                                                                                                                                                                                                                                             SAC3_150_81</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="172" />
                                                                                                                                                                                                                                                                                 SAC3_150_82</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="176" />
                                                                                                                                                                                                                                                                                     SAC3_39_80</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="175" />
                                                                                                                                                                                                                                                                                         SAC3_39_81</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="174" />
                                                                                                                                                                                                                                                                                             SAC3_39_82</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="177" />
                                                                                                                                                                                                                                                                                                 SAC3_Service_139_80</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="178" />
                                                                                                                                                                                                                                                                                                     SAC3_Service_70_80</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="182" />
                                                                                                                                                                                                                                                                                                         SAC3_Service_95_80</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="156" />
                                                                                                                                                                                                                                                                                                             SAC_UNITED_01</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="157" />
                                                                                                                                                                                                                                                                                                                 SAC_UNITED_02</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="158" />
                                                                                                                                                                                                                                                                                                                     SAC_UNITED_03</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="159" />
                                                                                                                                                                                                                                                                                                                         SAC_UNITED_04</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="160" />
                                                                                                                                                                                                                                                                                                                             SAC_UNITED_05</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="161" />
                                                                                                                                                                                                                                                                                                                                 SAC_UNITED_06</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="162" />
                                                                                                                                                                                                                                                                                                                                     SAC_UNITED__07</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="163" />
                                                                                                                                                                                                                                                                                                                                         SAC_UNITED__08</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="164" />
                                                                                                                                                                                                                                                                                                                                             SAC_UNITED__09</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="165" />
                                                                                                                                                                                                                                                                                                                                                 SAC_UNITED__10</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="166" />
                                                                                                                                                                                                                                                                                                                                                     SAC_UNITED__11</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="167" />
                                                                                                                                                                                                                                                                                                                                                         SAC_UNITED__12</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="230" />
                                                                                                                                                                                                                                                                                                                                                             SRV_BAR_Kiriman_01</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="229" />
                                                                                                                                                                                                                                                                                                                                                                 SRV_BAR_Kiriman_02</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="232" />
                                                                                                                                                                                                                                                                                                                                                                     SRV_Bar_Kiriman_03</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="233" />
                                                                                                                                                                                                                                                                                                                                                                         SRV_BAR_Kiriman_04</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="234" />
                                                                                                                                                                                                                                                                                                                                                                             Srv_Bar_Kir_Batam_01</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="235" />
                                                                                                                                                                                                                                                                                                                                                                                 Srv_Bar_Kir_Batam_02</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="236" />
                                                                                                                                                                                                                                                                                                                                                                                     Srv_Bar_Kir_Batam_03</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="237" />
                                                                                                                                                                                                                                                                                                                                                                                         Srv_Bar_Kir_Batam_04</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="268" /> TPB Kecil
                                                                         195_1</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="269" /> TPB Kecil
                                                                         195_2</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="270" /> TPB Kecil
                                                                         196_1</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="271" /> TPB Kecil
                                                                         196_2</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="272" /> TPB Kecil
                                                                         197_1</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="273" /> TPB Kecil
                                                                         197_2</label></a></li>
-                                                    <li><a href="javascript:void(0);"><label
+                                                    <li><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="274" /> TPB Kecil
                                                                         198</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="128" /> TPB
                                                                         Madya_194</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="116" /> TPB
                                                                         Madya_195</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="117" /> TPB
                                                                         Madya_196</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="119" /> TPB
                                                                         Madya_197</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="131" /> TPB
                                                                         Madya_198</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="25" /> TPB
                                                                         N02</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="32" /> TPB
                                                                         N03</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="33" /> TPB
                                                                         N04</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="155" /> TPBinhouse1</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="129" /> TPBinhouse2</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="118" /> TPBinhouse3</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="130" /> TPBinhouse4</label></a></li>
-                                                    <li className="active"><a href="javascript:void(0);"><label
+                                                    <li className="active"><a href="/"><label
                                                         className="checkbox"><input type="checkbox"
                                                             name="multiselect" value="190" /> EKSPOR_PRIOK_101</label></a></li>
                                                 </ul>

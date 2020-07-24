@@ -1,13 +1,9 @@
 import React from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
-import Login from './Login';
 import { connect } from 'react-redux';
 
 class Header extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     handleLogout = () => () => {
         axios.defaults.withCredentials = true;
@@ -15,11 +11,10 @@ class Header extends React.Component {
         axios.delete("http://dev.beacukai.go.id:9012/logout", document.cookie)
             .then(response => {
                 console.log(response);
-                // this.props.history.push("/login")
                 document.location = "/login"
             })
-            .catch(error => {
-                console.log(error);
+            .catch(e => {
+                console.log(e.response.data.message)
             })
     }
 
@@ -99,16 +94,16 @@ class Header extends React.Component {
                </Link>
                             </li>
                             <li className="dropdown nav-item">
-                                <Link to="javascript:void(0);" className="nav-link">
+                                {/* <Link to="" className="nav-link">
                                     <i className="nav-link-icon fa fa-sync-alt" />
                  Update
-               </Link>
+               </Link> */}
                             </li>
                             <li className="dropdown nav-item">
-                                <a className="nav-link" onClick={this.handleLogout()}>
+                                <span className="nav-link" onClick={this.handleLogout()}>
                                     <i className="nav-link-icon fa fa-logout" />
                  Logout
-               </a>
+               </span>
                             </li>
                         </ul>
                     </div>
@@ -118,7 +113,7 @@ class Header extends React.Component {
                                 <div className="widget-content-wrapper">
                                     <div className="widget-content-left">
                                         <div className="btn-group">
-                                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="p-0 btn">
+                                            <a href="/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="p-0 btn">
                                                 <img width={42} className="rounded-circle" src="../assets/images/avatars/1.jpg" alt="profile-pic" />
                                                 <i className="fa fa-angle-down ml-2 opacity-8" />
                                             </a>

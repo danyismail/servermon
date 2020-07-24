@@ -50,12 +50,12 @@ export default class Config extends React.Component {
                     </li>
                     <li class="nav-item">
                         <a role="tab" class="nav-link active show" id="tab-1" data-toggle="tab"
-                            href="#tab-content-1" aria-selected="true">
+                            href="/" aria-selected="true">
                             <span>General</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a role="tab" class="nav-link active show" id="tab-1" data-toggle="tab" href="#"
+                        <a role="tab" class="nav-link active show" id="tab-1" data-toggle="tab" href="/"
                             aria-selected="true">
                             <span>Telegram</span>
                         </a>
@@ -79,16 +79,16 @@ export default class Config extends React.Component {
                                     </div>
                                     <div class="position-relative row form-group"><label for="examplePassword"
                                         class="col-sm-2 col-form-label">Email from name</label>
-                                        <div class="col-sm-10"><input type="text" id="proxy_username"
+                                        <div class="col-sm-10"><input type="text"
                                             value="Server Monitor" name="email_from_input" id="examplePassword"
-                                            type="password" class="form-control" />
+                                            class="form-control" />
                                         </div>
                                     </div>
                                     <div class="position-relative row form-group"><label for="examplePassword"
                                         class="col-sm-2 col-form-label">Email from address</label>
-                                        <div class="col-sm-10"><input type="text" id="proxy_username"
-                                            value="monitor@example.org" name="email_from_input"
-                                            id="examplePassword" type="password" class="form-control" />
+                                        <div class="col-sm-10"><input type="text"
+                                            value="monitor@example.org" name="eemail_from_input"
+                                            id="examplePassword" class="form-control" />
                                         </div>
                                     </div>
 
@@ -99,15 +99,15 @@ export default class Config extends React.Component {
 
                                     <div class="position-relative row form-group"><label for="examplePassword"
                                         class="col-sm-2 col-form-label">SMTP Host</label>
-                                        <div class="col-sm-10"><input type="text" id="proxy_username" value=""
-                                            name="email_from_input" id="examplePassword" type="password"
+                                        <div class="col-sm-10"><input type="text" value=""
+                                            name="email_from_input" id="examplePassword"
                                             class="form-control" />
                                         </div>
                                     </div>
                                     <div class="position-relative row form-group"><label for="examplePassword"
                                         class="col-sm-2 col-form-label">SMTP Port</label>
-                                        <div class="col-sm-10"><input type="text" id="proxy_username" value=""
-                                            name="email_from_input" id="examplePassword" type="password"
+                                        <div class="col-sm-10"><input type="text" value=""
+                                            name="email_from_input" id="examplePassword"
                                             class="form-control" />
                                         </div>
                                     </div>
@@ -124,17 +124,17 @@ export default class Config extends React.Component {
                                     </div>
                                     <div class="position-relative row form-group"><label for="examplePassword"
                                         class="col-sm-2 col-form-label">SMTP Username</label>
-                                        <div class="col-sm-10"><input type="text" id="proxy_username" value="admin"
+                                        <div class="col-sm-10"><input type="text" value="admin"
                                             name="password" id="examplePassword"
-                                            placeholder="password placeholder" type="password"
+                                            placeholder="password placeholder"
                                             class="form-control" />
                                         </div>
                                     </div>
                                     <div class="position-relative row form-group"><label for="examplePassword"
                                         class="col-sm-2 col-form-label">SMTP Password</label>
                                         <div class="col-sm-10"><input type="text" id="proxy_username"
-                                            value="********" name="password" id="examplePassword"
-                                            type="password" class="form-control" />
+                                            value="********" name="password"
+                                            class="form-control" />
                                         </div>
                                     </div>
                                     <div class="position-relative row form-check">
@@ -247,22 +247,22 @@ export default class Config extends React.Component {
                                     <div class="position-relative row form-group"><label for="examplePassword"
                                         class="col-sm-2 col-form-label">Proxy URL</label>
                                         <div class="col-sm-10"><input name="password" id="examplePassword"
-                                            placeholder="" type="password" class="form-control" />
+                                            placeholder="" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="position-relative row form-group"><label for="examplePassword"
                                         class="col-sm-2 col-form-label">Proxy Username</label>
                                         <div class="col-sm-10"><input type="text" id="proxy_username" value="admin"
-                                            name="password" id="examplePassword"
-                                            placeholder="password placeholder" type="password"
+                                            name="password"
+                                            placeholder="password placeholder"
                                             class="form-control" />
                                         </div>
                                     </div>
                                     <div class="position-relative row form-group"><label for="examplePassword"
                                         class="col-sm-2 col-form-label">Proxy Password</label>
                                         <div class="col-sm-10"><input type="text" id="proxy_username"
-                                            value="********" name="password" id="examplePassword"
-                                            type="password" class="form-control" />
+                                            value="********" name="password"
+                                            class="form-control" />
                                         </div>
                                     </div>
 

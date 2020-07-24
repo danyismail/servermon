@@ -4,6 +4,7 @@ import { api, formatDate, formatTime } from './Constants';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import { Pagination } from 'antd';
+import * as Constant from './Api'
 import { connect } from 'react-redux';
 // import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 class Server extends React.Component {
@@ -13,41 +14,112 @@ class Server extends React.Component {
             jaringan: [],
             isLoading: false,
             showModal: false,
-            serverGroup: "",
+            serverGroup: '',
             page: 1,
             limit: 10,
-            object: []
+            object: [],
+            category: [],
+            currentGroup: 0
         }
     }
 
-    onChange = (pageNumber, pageSize) => {
-        // console.log(pageNumber);
-        axios.get(api() + '/server', {
-            params: {
-                serverGroup: this.state.serverGroup,
-                page: pageNumber,
-                limit: pageSize
-            }
-        })
-            .then(response => {
-                console.log(response.data.data);
-                this.setState({ jaringan: response.data.data.servers, object: response.data.data, isLoading: false });
+    onChange = async (pageNumber, pageSize) => {
+        //cek currrent group first
+        console.log(pageNumber, pageSize)
+        this.state.currentGroup === 0 ? (
+            await axios.get(api() + '/server', {
+                params: {
+                    serverGroup: this.state.serverGroup,
+                    page: pageNumber,
+                    limit: pageSize
+                }
             })
-            .catch(error => {
-                console.log(error);
+                .then(response => {
+                    console.log(response.data.data);
+                    this.setState({ jaringan: response.data.data.servers, object: response.data.data, isLoading: false });
+                })
+                .catch(error => {
+                    console.log(error);
+                }
+                )) : (
+                axios.get(api() + '/server', {
+                    params: {
+                        serverGroup: this.state.currentGroup,
+                        page: pageNumber,
+                        limit: pageSize
+                    }
+                })
+                    .then(response => {
+                        console.log(response.data.data);
+                        this.setState({ jaringan: response.data.data.servers, object: response.data.data, isLoading: false });
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    }))
+    }
+
+    onChangeCategory = () => {
+        console.log(this.state.currentGroup, "from onChangeCategory")
+        this.state.currentGroup === 0 ?
+            axios.get(api() + '/server', {
+                params: {
+                    serverGroup: this.state.serverGroup,
+                    page: this.state.page,
+                    limit: this.state.limit
+                }
             })
-        // this.setState({
-        //     currentPage: pageNumber
-        // });
+                .then(response => {
+                    console.log("masuk get all")
+                    console.log(response.data.data);
+                    this.setState({ jaringan: response.data.data.servers, object: response.data.data, isLoading: false });
+                })
+                .catch(error => {
+                    console.log(error);
+                }
+                ) :
+            axios.get(api() + '/server', {
+                params: {
+                    serverGroup: this.state.currentGroup,
+                    page: this.state.page,
+                    limit: this.state.limit
+                }
+            })
+                .then(response => {
+                    console.log(response.data.data);
+                    this.setState({ jaringan: response.data.data.servers, object: response.data.data, isLoading: false });
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+    }
+
+    getCategory = async () => {
+        try {
+            const result = await axios.get(Constant.BC_SERVER_CATEGORY, { withCredentials: true })
+            this.setState({ category: result.data.data })
+        } catch (error) {
+            console.log(error.response.data.message)
+        }
+    }
+
+    handleChange = (e) => {
+        e.preventDefault()
+        console.log(e.target.name, e.target.value)
+        this.setState({ currentGroup: parseInt(e.target.value) }, () => { this.onChangeCategory() })
+    }
+
+    showTotal = (total) => {
+        return `Total ${total} servers`;
     }
 
     componentDidMount() {
         this.setState({ isLoading: true });
+        this.getCategory()
         axios.defaults.withCredentials = true;
         axios.get(api() + '/server', {
             params: {
                 serverGroup: this.state.serverGroup,
-                page: this.state.currentPage,
+                page: this.state.page,
                 limit: this.state.limit
             }
         })
@@ -56,7 +128,12 @@ class Server extends React.Component {
                 console.log(this.state.object);
             })
             .catch(error => {
-                console.log(error);
+                if (!error.response) {
+                    alert('Network error')
+                } else {
+                    console.log(error.response.data.message)
+                    document.location = '/login'
+                }
             })
     }
 
@@ -153,17 +230,44 @@ class Server extends React.Component {
             <div className="row">
                 <div className="col-md-12">
                     <div className="main-card mb-3 card">
-                        <div className="card-header">Server
-                                    <div className="btn-actions-pane-right">
-                                <div role="group" className="btn-group-sm btn-group">
-                                    {/* <button className="active btn btn-focus" onClick={this.findDate("may")}>Last Week</button> */}
-                                    {/* <button className="btn btn-focus">All Month</button>
-                                     */}
-                                    {/* <button className="btn btn-focus" onClick={this.handleFilter('website')}>Website</button>
-                                    <button className="btn btn-focus" onClick={this.handleFilter('service')}>Service</button> */}
+                        {this.props.level === 10 ? (
+                            <div className="card-header">
+                                <Link to="/server/add" className="btn btn-success btn-sm">Add Server</Link >
+                                <div className="btn-actions-pane-right">
+                                    <div role="group" className="btn-group-sm btn-group">
+                                        <select className="form-control form-control-sm mr-4" name="category" value={this.state.currentGroup} onChange={this.handleChange}>
+                                            <option key="0" value={0}>Select All</option>
+                                            {this.state.category.map((item) => (
+                                                <option key={item.category_id} value={item.category_id}>{item.name}</option>
+                                            ))}
+                                        </select>
+                                        <div class="input-group input-group-sm hidden-xs">
+                                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search" />
+                                            <div class="input-group-btn">
+                                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        ) : (
+                                <div className="card-header">
+                                    Server
+                                    <div class="box-tools">
+                                        <div class="input-group input-group-sm hidden-xs">
+                                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search" />
+                                            <div class="input-group-btn">
+                                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="btn-actions-pane-right">
+                                        <div role="group" className="btn-group-sm btn-group"></div>
+                                    </div>
+                                </div>
+                            )
+                        }
+
                         <div className="table-responsive">
                             <table className="align-middle mb-0 table table-borderless table-striped table-hover">
                                 <thead>
@@ -227,13 +331,9 @@ class Server extends React.Component {
                                     )}
                                 </tbody>
                             </table>
-                            <Pagination showQuickJumper total={this.state.object.totalItems} onChange={this.onChange} />
                         </div>
                         <div className="d-block text-center card-footer">
-                            <button type="button" className="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
-                                data-toggle="modal" data-target="#exampleModal"><i
-                                    className="fa fa-trash-alt btn-icon-wrapper"> </i></button>
-                            <button className="btn-wide btn btn-success">Save </button>
+                            <Pagination size="small" defaultCurrent={1} showQuickJumper total={this.state.object.totalItems} showTotal={this.showTotal} onChange={this.onChange} />
                         </div>
                     </div>
                 </div>

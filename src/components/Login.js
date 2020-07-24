@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
 import { api, setCookie } from './Constants';
 
 export default class Login extends React.Component {
@@ -39,9 +38,15 @@ export default class Login extends React.Component {
                 document.location = "/";
             })
             .catch(error => {
-                console.log(error.response)
-                if (error.response.status === 400) {
-                    alert("Incorrect username or password");
+                if (!error.response) {
+                    alert('Network error')
+                } else {
+                    // http status code
+                    const code = error.response.status
+                    // response data
+                    console.log(error.response.data.message)
+                    const response = error.response.data.message
+                    alert(`[${code}] ${response}`)
                 }
             })
     }
@@ -73,21 +78,21 @@ export default class Login extends React.Component {
                                                     <div className="col-md-12">
                                                         <div className="position-relative form-group"><input name="password"
                                                             id="examplePassword" placeholder="Password here..."
-                                                            value={this.state.password} onChange={this.handleChange} type="password" className="form-control" /></div>
+                                                            value={this.state.password} onChange={this.handleChange} type="password" suggested="current-password" className="form-control" /></div>
                                                     </div>
                                                 </div>
 
                                                 <div className="position-relative form-check"><input name="check" id="exampleCheck"
-                                                    type="checkbox" className="form-check-input" /><label for="exampleCheck"
+                                                    type="checkbox" className="form-check-input" /><label htmlFor="exampleCheck"
                                                         className="form-check-label">Keep me logged in</label></div>
 
                                                 <div className="divider"></div>
-                                                <h6 className="mb-0">No account? <a href="javascript:void(0);" className="text-primary">Sign
+                                                <h6 className="mb-0">No account? <a href="/" className="text-primary">Sign
                                             up now</a></h6>
 
 
                                                 <div className="modal-footer clearfix">
-                                                    <div className="float-left"><a href="javascript:void(0);" className="btn-lg btn btn-link">Recover
+                                                    <div className="float-left"><a href="/" className="btn-lg btn btn-link">Recover
                                             Password</a></div>
                                                     <div className="float-right"><button type="submit" className="btn btn-primary btn-lg">
                                                         Login
@@ -98,15 +103,12 @@ export default class Login extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="text-center text-white opacity-8 mt-3">Powered by © CEISA 4.0 Server Monitoring 2020
-                        </div>
+                                <div className="text-center text-white opacity-8 mt-3">Powered by © CEISA 4.0 Server Monitoring 2020 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        );
-
-
+        )
     }
 }

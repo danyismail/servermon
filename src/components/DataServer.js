@@ -19,12 +19,12 @@ class DataServer extends React.Component {
 
         let serverLabel = []
         servers.server_uptime.map((item) => {
-            serverLabel.push(formatDateHour(item.date))
+            return serverLabel.push(formatDateHour(item.date))
         })
 
         let rTime = []
         servers.server_uptime.map((item) => {
-            rTime.push(item.latency)
+            return rTime.push(item.latency)
         })
         //Create highcarts param
         let paramHighChart = {
