@@ -54,7 +54,8 @@ class defaultLayout extends React.Component {
                         <div className="app-main__inner">
                             <Switch>
                                 <Route exact path="/" component={Home} />
-                                <Route path="/user" component={User} />
+                                <Route exact path="/user" component={User} />
+                                <Route path="/user/add" component={User} />
                                 <Route exact path="/server" component={Server} />
                                 <Route path="/server/add" component={ServerAdd} />
                                 <Route path="/log" component={Log} />
