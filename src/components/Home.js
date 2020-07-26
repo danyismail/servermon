@@ -45,7 +45,7 @@ export default class Home extends React.Component {
                 {this.state.jaringan.map(server =>
                     <div key={server.server_id} className="col-md-2.5 col-xl-2">
                         <Link
-                            to={`/detail_server/${server.server_id}`} className="card mb-3 widget-content badge-success">
+                            to={`/server/${server.server_id}`} className="card mb-3 widget-content badge-success">
                             <div className="widget-content-wrapper text-white">
                                 <div className="widget-content-left">
                                     <div className="widget-heading">{server.label}</div>
