@@ -38,7 +38,7 @@ export default class Log extends React.Component {
             })
             .catch(error => {
                 console.log(error);
-                alert('Data yang dicari kosong')
+                // alert('Data yang dicari kosong')
             })
 
 

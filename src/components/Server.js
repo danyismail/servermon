@@ -98,7 +98,16 @@ class Server extends React.Component {
             const result = await axios.get(Constant.BC_SERVER_CATEGORY, { withCredentials: true })
             this.setState({ category: result.data.data })
         } catch (error) {
-            console.log(error.response.data.message)
+            if (!error.response) {
+                console.log("Network error")
+            } else {
+                // http status code
+                // const code = error.response.status
+                // response data
+                console.log(error.response.data.message)
+                // const response = error.response.data.message
+                document.location = '/login'
+            }
         }
     }
 
@@ -129,7 +138,7 @@ class Server extends React.Component {
             })
             .catch(error => {
                 if (!error.response) {
-                    alert('Network error')
+                    console.log('Network error')
                 } else {
                     console.log(error.response.data.message)
                     document.location = '/login'

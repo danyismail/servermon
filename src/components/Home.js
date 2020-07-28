@@ -9,7 +9,7 @@ export default class Home extends React.Component {
         super(props);
         this.state = {
             jaringan: [],
-            isLoading: false
+            isLoading: true
         };
     }
 
@@ -27,7 +27,9 @@ export default class Home extends React.Component {
                     console.log(response.data.data.servers);
                 })
                 .catch(error => {
+                    this.setState({ isLoading: false })
                     console.log(error);
+                    document.location = '/login'
                 });
         }, 5000)
 
