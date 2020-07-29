@@ -3,11 +3,12 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+
 class Header extends React.Component {
 
-    handleLogout = () => () => {
+    handleLogout() {
+        console.log("Logout kepanggil")
         axios.defaults.withCredentials = true;
-
         axios.delete("http://dev.beacukai.go.id:9012/logout", document.cookie)
             .then(response => {
                 console.log(response);
@@ -100,7 +101,7 @@ class Header extends React.Component {
                </Link> */}
                             </li>
                             <li className="dropdown nav-item">
-                                <span className="nav-link" onClick={this.handleLogout()}>
+                                <span className="nav-link" onClick={this.handleLogout}>
                                     <i className="nav-link-icon fa fa-logout" />
                  Logout
                </span>
@@ -113,15 +114,18 @@ class Header extends React.Component {
                                 <div className="widget-content-wrapper">
                                     <div className="widget-content-left">
                                         <div className="btn-group">
-                                            <a href="/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="p-0 btn">
+                                            <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" className="p-0 btn">
                                                 <img width={42} className="rounded-circle" src="../assets/images/avatars/1.jpg" alt="profile-pic" />
                                                 <i className="fa fa-angle-down ml-2 opacity-8" />
-                                            </a>
+                                            </button>
 
-                                            <div tabIndex={-1} role="menu" aria-hidden="true" className="dropdown-menu dropdown-menu-right">
-                                                <button type="button" tabIndex={0} className="dropdown-item">User
-                Account</button>
-                                                <button type="button" tabIndex={0} className="dropdown-item">Settings</button>
+                                            <div role="menu" aria-hidden="true" className="dropdown-menu dropdown-menu-right">
+                                                <button className="dropdown-item">User Account</button>
+                                                <button className="dropdown-item">Settings</button>
+                                                <button onClick={(e) => {
+                                                    e.preventDefault()
+                                                    console.log("Trigger logout dari profile menu")
+                                                }} className="dropdown-item">Logout</button>
                                             </div>
                                         </div>
                                     </div>
@@ -131,15 +135,14 @@ class Header extends React.Component {
                                         </div>
                                         <div className="widget-subheading">
                                             Mitra Infosarana
-          </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
+            </div >
         );
     }
 }

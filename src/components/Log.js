@@ -17,7 +17,7 @@ export default class Log extends React.Component {
             isLoading: false,
             direction: null,
             currentPage: 1,
-            type: '',
+            type: 'telegram',
             limit: 10,
             url: `${api()}/log?type=&page=1&limit=10`
         }
@@ -38,7 +38,8 @@ export default class Log extends React.Component {
             })
             .catch(error => {
                 console.log(error);
-                // alert('Data yang dicari kosong')
+                alert('No available data')
+                document.location = "/"
             })
 
 
@@ -129,7 +130,7 @@ export default class Log extends React.Component {
                                                             <td>
                                                                 <div className="table-body">
                                                                     <div className="table-cell">
-                                                                        <Link to={`/detail_server/${log.server_id}`}>
+                                                                        <Link to={`/server/${log.server_id}`}>
 
                                                                             <span
                                                                                 className="title">

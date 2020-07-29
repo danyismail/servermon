@@ -82,15 +82,17 @@ class DataServer extends React.Component {
         // console.log(params.id)
         // console.log(api() + '/server/' + params.id);
         axios.defaults.withCredentials = true
-        axios.get(api() + '/server/' + params.id)
-            .then(response => {
-                // console.log(response.data.data);
-                this.setState({ detail: response.data.data, isLoading: false })
-                this.getServerUptime()
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        setInterval(() => {
+            axios.get(api() + '/server/' + params.id)
+                .then(response => {
+                    console.log("Interval graphic running")
+                    this.setState({ detail: response.data.data, isLoading: false })
+                    this.getServerUptime()
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        }, 5000)
     }
 
     render() {
@@ -118,7 +120,7 @@ class DataServer extends React.Component {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="main-card mb-3 card">
-                                    <div className="card-header">Active Users
+                                    <div className="card-header">Detail Server
                             </div>
                                     <div className="table-responsive">
                                         <table className="align-middle mb-0 table table-borderless table-striped table-hover">
@@ -201,8 +203,8 @@ class DataServer extends React.Component {
                                     </div>
                                     <div className="d-block text-center card-footer">
                                         {/* <button className="mr-2 btn-icon btn-icon-only btn btn-outline-success"><Link to={`/user_edit/${this.state.detail.server_id}`} className="fa fa-edit btn-icon-wrapper"> </Link></button> */}
-                                        <button className="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i
-                                            className="fa fa-save btn-icon-wrapper"> </i></button>
+                                        {/* <button className="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i
+                                            className="fa fa-save btn-icon-wrapper"> </i></button> */}
                                     </div>
                                 </div>
                             </div>

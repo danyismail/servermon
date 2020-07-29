@@ -16,36 +16,80 @@ class User extends React.Component {
     }
 
     getAllUsers = async () => {
-        try {
-            console.log("Masuk get All users")
-            const { data } = await axios.get(API.BC_SERVER_ALL_USER)
-            this.setState({ users: data.data.users })
-            this.setState({ isLoading: false })
-        } catch (error) {
-            console.log(error)
-        }
+        // axios.defaults.withCredentials = true;
+        // try {
+        //     console.log("Masuk get All users")
+        //     const { data } = await axios.get(API.BC_SERVER_ALL_USER)
+        //     this.setState({ users: data.data.users })
+        //     this.setState({ isLoading: false })
+        // } catch (error) {
+        //     this.setState({ isLoading: false })
+        //     console.log(error)
+        // }
+        console.log("Masuk get all user")
+        axios.defaults.withCredentials = true;
+        axios.get(API.BC_SERVER_ALL_USER)
+            .then((result) => {
+                this.setState({ users: result.data.data.users })
+                console.log(this.state.users)
+                this.setState({ isLoading: false })
+            })
+            .catch(e => {
+                this.setState({ isLoading: false })
+                console.log(e)
+            })
     }
 
-    getUser = async () => {
-        try {
-            console.log("Masuk get 1 user")
-            const { data } = await axios.get(API.BC_SERVER_CHECK_USER)
-            this.setState({ userData: data.data.user_data })
-            this.setState({ isLoading: false })
-        } catch (error) {
-            console.log(error)
-        }
+    getUser = () => {
+        console.log("Masuk get 1 user")
+        axios.defaults.withCredentials = true;
+        axios.get(API.BC_SERVER_CHECK_USER)
+            .then((result) => {
+                this.setState({ userData: result.data.data.user_data })
+                this.setState({ isLoading: false })
+            })
+            .catch(e => {
+                this.setState({ isLoading: false })
+                console.log(e)
+            })
+    }
+
+    deleteUser = (id) => {
+        alert("Sure to delete ?")
+        console.log("Delete user ", id)
+        axios.defaults.withCredentials = true;
+        axios({
+            method: 'DELETE',
+            url: `${API.BC_SERVER_CHECK_USER}?userId=${id}`,
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+            .then(result => {
+                console.log(result, 'call function deleteUser')
+                alert(result)
+                this.getUser()
+                this.getAllUsers()
+            })
+            .catch(e => {
+                console.log(e.message)
+                // alert(e.response.data.message)
+            })
     }
 
     async componentDidMount() {
-        console.log(this.props.level, "Sebelum")
+        console.log(this.props.level, this.props.user_id)
         this.setState({ level: this.props.level })
         console.log(this.props.level, "Sesudah")
-        this.props.level === 10 ? (await this.getAllUsers()) : (await this.getUser())
+        // this.props.level === 10 ? (await this.getAllUsers()) : (this.getUser())
+        this.getAllUsers()
+        this.getUser()
     }
 
+
+
     render() {
-        const { isLoading, users, userData } = this.state
+        const { isLoading } = this.state
         console.log(this.props)
         if (isLoading) {
             return (
@@ -84,7 +128,7 @@ class User extends React.Component {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {users.map((item, key) => (
+                                    {this.state.users.map((item, key) => (
                                         <tr>
                                             <td className="text-center text-muted">{key + 1}</td>
                                             <td className="">{item.user_name}</td>
@@ -98,10 +142,13 @@ class User extends React.Component {
                                             </td>
 
                                             <td className="text-center">
-                                                <Link to={`/user_edit/${item.user_id}`} className="mr-2 btn-icon btn-icon-only btn btn-outline-danger">
+                                                <Link to={`/user_edit/${item.user_id}`} className="mr-2 btn-icon btn-icon-only btn btn-outline-warning">
                                                     <i className="fa fa-edit btn-icon-wrapper"> </i>
                                                 </Link>
-                                                <button onClick={() => { this.deleteUser(item.user_id) }} className="mr-2 btn-icon btn-icon-only btn btn-outline-primary">
+                                                <button onClick={(e) => {
+                                                    e.preventDefault()
+                                                    this.deleteUser(item.user_id)
+                                                }} className="mr-2 btn-icon btn-icon-only btn btn-outline-danger">
                                                     <i className="fa fa-trash-alt btn-icon-wrapper"> </i>
                                                 </button>
                                             </td>
@@ -114,24 +161,15 @@ class User extends React.Component {
                             {/* <button className="btn-wide btn btn-success">Save</button> */}
                         </div>
                     </div>
-                </div>
+                </div >
             ) : (
-                    //Kondisi user
+                    //Kondisi single user
                     <div className="col-md-12">
                         <div className="main-card mb-3 card">
                             <div className="card-header">User
                                 <div className="btn-actions-pane-right">
-                                    {
-                                        this.props.level === 10 ? (<Link to="/user/add" className="mr-2 btn-icon btn-icon-only btn btn-outline-primary">Add User</Link>) : (<div></div>)
-                                    }
                                 </div>
                             </div>
-                            {/* {sureToDelete ?
-                                <Alert color="info" isOpen={this.state.visible} toggle={this.onDismiss}>
-                                    I am an alert and I can be dismissed!
-                    </Alert>
-                                : <></>
-                            } */}
                             <div className="table-responsive">
                                 <table className="align-middle mb-0 table table-borderless table-striped table-hover">
                                     <thead>
@@ -141,7 +179,6 @@ class User extends React.Component {
                                             <th className="text-center">Level</th>
                                             <th className="text-center">Email</th>
                                             <th className="text-center">Mobile</th>
-                                            <th className="text-center">Servers</th>
                                             <th className="text-center">Action </th>
 
                                         </tr>
@@ -149,19 +186,14 @@ class User extends React.Component {
                                     <tbody>
                                         <tr>
                                             <td className="text-center text-muted">{}</td>
-                                            <td className="">{userData.user_name}</td>
-                                            <td className="text-center">{userData.level === 10 ? 'Superadmin' : 'Admin'}</td>
-                                            <td className="text-center">{userData.email}</td>
-                                            <td className="text-center">{userData.mobile} </td>
-                                            <td className="text-left"></td>
-
+                                            <td className="">{this.state.userData.user_name}</td>
+                                            <td className="text-center">{this.state.userData.level === 10 ? 'Superadmin' : 'Admin'}</td>
+                                            <td className="text-center">{this.state.userData.email}</td>
+                                            <td className="text-center">{this.state.userData.mobile} </td>
                                             <td className="text-center">
-                                                <Link to={`/user_edit/${userData.user_id}`} className="mr-2 btn-icon btn-icon-only btn btn-outline-danger">
+                                                <Link to={`/account_edit/${this.state.userData.user_id}`} className="mr-2 btn-icon btn-icon-only btn btn-outline-warning">
                                                     <i className="fa fa-edit btn-icon-wrapper"> </i>
                                                 </Link>
-                                                <button onClick={() => { this.deleteUser(userData.user_id) }} className="mr-2 btn-icon btn-icon-only btn btn-outline-primary">
-                                                    <i className="fa fa-trash-alt btn-icon-wrapper"> </i>
-                                                </button>
                                             </td>
                                         </tr>
                                     </tbody>

@@ -6,6 +6,8 @@ import _ from 'lodash';
 import { Pagination } from 'antd';
 import * as Constant from './Api'
 import { connect } from 'react-redux';
+// import { map } from 'highcharts';
+// import { fileToObject } from 'antd/lib/upload/utils';
 // import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 class Server extends React.Component {
     constructor(props) {
@@ -19,13 +21,26 @@ class Server extends React.Component {
             limit: 10,
             object: [],
             category: [],
-            currentGroup: 0
+            currentGroup: 0,
+            q: '',
+            filteredData: [],
+            lastPageActive: 0
         }
+    }
+
+
+    queryHasil = () => {
+        const filteredData = this.state.jaringan.filter(element => {
+            return element.label.toLowerCase().includes(this.state.q.toLowerCase());
+        });
+        console.log(filteredData, "ini hasil filter ")
     }
 
     onChange = async (pageNumber, pageSize) => {
         //cek currrent group first
+        this.setState({ isLoading: true })
         console.log(pageNumber, pageSize)
+        this.setState({ lastPageActive: pageNumber })
         this.state.currentGroup === 0 ? (
             await axios.get(api() + '/server', {
                 params: {
@@ -35,6 +50,7 @@ class Server extends React.Component {
                 }
             })
                 .then(response => {
+                    this.setState({ isLoading: false })
                     console.log(response.data.data);
                     this.setState({ jaringan: response.data.data.servers, object: response.data.data, isLoading: false });
                 })
@@ -59,6 +75,7 @@ class Server extends React.Component {
     }
 
     onChangeCategory = () => {
+        this.setState({ isLoading: true })
         console.log(this.state.currentGroup, "from onChangeCategory")
         this.state.currentGroup === 0 ?
             axios.get(api() + '/server', {
@@ -85,6 +102,7 @@ class Server extends React.Component {
                 }
             })
                 .then(response => {
+                    this.setState({ isLoading: false })
                     console.log(response.data.data);
                     this.setState({ jaringan: response.data.data.servers, object: response.data.data, isLoading: false });
                 })
@@ -121,9 +139,7 @@ class Server extends React.Component {
         return `Total ${total} servers`;
     }
 
-    componentDidMount() {
-        this.setState({ isLoading: true });
-        this.getCategory()
+    getInitialServer = () => {
         axios.defaults.withCredentials = true;
         axios.get(api() + '/server', {
             params: {
@@ -133,8 +149,14 @@ class Server extends React.Component {
             }
         })
             .then(response => {
+                // const { q } = this.state
+                // const filteredData = response.data.data.servers.filter(element => {
+                //     return element.name.toLowerCase().includes(q.toLowerCase());
+                // });
+                // filteredData: filteredData
                 this.setState({ jaringan: response.data.data.servers, object: response.data.data, isLoading: false });
                 console.log(this.state.object);
+                this.setState({ isLoading: false })
             })
             .catch(error => {
                 if (!error.response) {
@@ -146,12 +168,44 @@ class Server extends React.Component {
             })
     }
 
+    componentDidMount() {
+        this.setState({ isLoading: true });
+        this.getCategory()
+        this.getInitialServer()
+    }
+
     handleFilter = nama_tipe => {
         this.setState({ isLoading: true });
         const { jaringan } = this.state;
         const result = _.filter(jaringan, (o) => _.includes(o, nama_tipe));
         this.setState({ jaringan: result, isLoading: false });
     }
+
+    deleteServer = (id) => {
+        alert("Sure to delete?")
+        console.log('Delete user', id)
+        axios.delete(`${Constant.BC_SERVER_LIST}/${id}`)
+            .then((result) => {
+                console.log(result, "Ini result delete data")
+                this.setState({ isLoading: false })
+                this.getInitialServer()
+            })
+            .catch(e => {
+                this.setState({ isLoading: false })
+                console.log(e)
+            })
+    }
+
+    // filterArray = () => {
+    //     var searchString = this.state.query;
+    //     var responseData = this.state.data
+    //     if (searchString.length > 0) {
+    //         // console.log(responseData[i].name);
+    //         responseData = responseData.filter(l => {
+    //             console.log(l.name.toLowerCase().match(searchString));
+    //         })
+    //     }
+    // }
 
     renderModalClose() {
         this.setState({ showModal: false })
@@ -250,10 +304,10 @@ class Server extends React.Component {
                                                 <option key={item.category_id} value={item.category_id}>{item.name}</option>
                                             ))}
                                         </select>
-                                        <div class="input-group input-group-sm hidden-xs">
-                                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search" />
-                                            <div class="input-group-btn">
-                                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                        <div className="input-group input-group-sm hidden-xs">
+                                            <input type="text" name="table_search" className="form-control pull-right" placeholder="Search" />
+                                            <div className="input-group-btn">
+                                                <button type="submit" className="btn btn-default"><i className="fa fa-search"></i></button>
                                             </div>
                                         </div>
                                     </div>
@@ -262,11 +316,9 @@ class Server extends React.Component {
                         ) : (
                                 <div className="card-header">
                                     Server
-                                    <div class="box-tools">
-                                        <div class="input-group input-group-sm hidden-xs">
-                                            <input type="text" name="table_search" class="form-control pull-right" placeholder="Search" />
-                                            <div class="input-group-btn">
-                                                <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                                    <div className="box-tools">
+                                        <div className="input-group input-group-sm hidden-xs">
+                                            <div className="input-group-btn">
                                             </div>
                                         </div>
                                     </div>
@@ -329,10 +381,12 @@ class Server extends React.Component {
                                                                 className="fa fa-edit btn-icon-wrapper">
                                                             </Link></button>
                                                         {/* <button type="button" onClick={() => this.renderModal(server.server_id) && this.setState({showModal:true})} */}
-                                                        <button type="button" onClick={() => this.setState({ showModal: true })}
+                                                        <button type="button" onClick={(e) => {
+                                                            e.preventDefault()
+                                                        }, () => { this.deleteServer(server.server_id) }}
                                                             className="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
-                                                            data-toggle="modal" data-target={`#server${server.server_id}`}><i
-                                                                className="fa fa-trash-alt btn-icon-wrapper"> </i></button>
+                                                            data-toggle="modal" data-target={`#server${server.server_id}`}><i className="fa fa-trash-alt btn-icon-wrapper"> </i>
+                                                        </button>
                                                     </>) : (<></>)}
                                                 {this.state.showModal && this.renderModal(server.server_id)}
                                             </td>

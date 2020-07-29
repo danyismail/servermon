@@ -13,6 +13,7 @@ import ServerAdd from './ServerAdd'
 import UserEdit from './UserEdit'
 import { Route, Switch } from "react-router-dom"
 import { connect } from 'react-redux'
+import AccountEdit from './AccountEdit'
 
 class defaultLayout extends React.Component {
     checkUser = async () => {
@@ -55,6 +56,7 @@ class defaultLayout extends React.Component {
                                 <Route path="/config" component={Config} />
                                 <Route path="/server/:id" component={DataServer} />
                                 <Route path="/user_edit/:id" component={UserEdit} />
+                                <Route exact path="/account_edit/:id" component={AccountEdit} />
                             </Switch>
                         </div>
                     </div>

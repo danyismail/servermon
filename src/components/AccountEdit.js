@@ -1,18 +1,14 @@
-import React from 'react'
+import React from "react";
 import axios from 'axios'
 import { api } from './Constants'
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
-import Select from 'react-select';
 import * as Constant from './Api'
-// import qs from 'qs'
+import { Link } from 'react-router-dom';
 
-class UserEdit extends React.Component {
+class AccountEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             user_id: 0,
-            server_list: [],
             isLoading: false,
             user_name: '',
             name: '',
@@ -21,12 +17,12 @@ class UserEdit extends React.Component {
             pushover_key: '',
             pushover_device: '',
             telegram_id: '',
-            email: '',
-            arrServer: []
+            email: ''
         }
     }
 
     async componentDidMount() {
+        console.log(this.state.detail)
         this.setState({ isLoading: true });
         const { match: { params } } = this.props;
         this.setState({ user_id: parseInt(params.id) })
@@ -43,11 +39,8 @@ class UserEdit extends React.Component {
                     pushover_device: response.data.data.user_data.pushover_device,
                     telegram_id: response.data.data.user_data.telegram_id,
                     email: response.data.data.user_data.email,
-                    server_list: response.data.data.user_data.servers,
                     isLoading: false
-                });
-                console.log(this.state.server_id)
-                console.log(this.props.listAllServers, 'ini propsnya llist all')
+                })
             })
             .catch(error => {
                 console.log(error);
@@ -63,28 +56,13 @@ class UserEdit extends React.Component {
         })
     }
 
-
-
-    handleChange = arr => {
-        arr != null ?
-            this.setState({ server_list: arr }, () => {
-                let finalObj = this.state.server_list.map(s => ({
-                    label: s.label,
-                    server_id: s.value,
-                }))
-                this.setState({ server_list: finalObj })
-                console.log(this.state)
-            }) : this.setState({ server_list: [{ label: "No data", server_id: 0 }] })
-    };
-
     putUser = (userData) => {
         delete userData.isLoading
-        delete userData.arrServer
         console.log(userData, "Body will be sent")
         axios.defaults.withCredentials = true
         axios({
             method: 'PUT',
-            url: `${Constant.BC_SERVER_CHECK_USER}?userId=${this.state.user_id}`,
+            url: `${Constant.BC_SERVER_CHECK_USER}`,
             // data: qs.stringify(userData),
             data: userData,
             headers: {
@@ -93,44 +71,19 @@ class UserEdit extends React.Component {
         })
             .then(result => {
                 console.log(result, 'call func putUser')
-                alert(result)
+                alert(result.data)
+                console.log(result.data)
                 this.props.history.push('/user')
             })
             .catch(e => {
-                console.log(e.message)
+                console.log(e, "error dari put")
                 // alert(e.response.data.message)
             })
     }
 
-    createObjCurrentServer = (list) => {
-        if (list === null || list === undefined) {
-            return [{
-                label: "No data",
-                value: "No Value"
-            }]
-        }
-
-        return list.map(s => ({
-            label: s.label,
-            value: s.server_id
-        }))
-    }
-
     render() {
-        const { isLoading, server_list } = this.state
+        const { isLoading } = this.state
         let userData = this.state
-
-        let objServer = this.props.listAllServers.map(s => ({
-            label: s.label,
-            value: s.server_id,
-        }))
-
-        // this.createObjCurrentServer()
-        let objServerCurrent = server_list.map(s => ({
-            label: s.label,
-            value: s.server_id,
-        }))
-
         if (isLoading) {
             return (
                 <div className="lds-circle"><div className="lds-circle-here"></div></div>
@@ -139,9 +92,8 @@ class UserEdit extends React.Component {
         return (
             <div className="col-md-12">
                 <div className="main-card mb-3 card">
-                    <div className="card-header">Server
+                    <div className="card-header">Account Detail
                                 <div className="btn-actions-pane-right">
-
                         </div>
                     </div>
                     <div className="row">
@@ -254,26 +206,10 @@ class UserEdit extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            <div className="main-card mb-3 card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Server </h5>
-                                    <Select
-                                        isSearchable
-                                        isMulti
-                                        defaultValue={objServerCurrent}
-                                        // onChange={this.handleChange}
-                                        options={objServer}
-                                        onChange={this.handleChange}
-                                        name="server_list"
-                                    />
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div className="d-block text-center card-footer">
-
                         <div className="card-body">
-
                             <button onClick={(e) => {
                                 e.preventDefault()
                                 this.putUser(userData)
@@ -281,31 +217,13 @@ class UserEdit extends React.Component {
                                     </button>
                             <Link to={'/user'} className="mb-2 mr-2 btn btn-secondary">Go Back
                                     </Link>
-
                         </div>
                     </div>
                 </div >
             </div >
         )
     }
+
 }
 
-const mapStateToProps = (state) => {
-    return {
-        listAllServers: state.servers,
-    }
-}
-
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//         setServers: async () => {
-//             const { data } = await axios.get("http://dev.beacukai.go.id:9012/server", { withCredentials: true })
-//             dispatch({
-//                 type: 'SET_SERVERS',
-//                 payload: data.data.servers
-//             })
-//         }
-//     }
-// }
-
-export default connect(mapStateToProps)(UserEdit)
+export default AccountEdit
